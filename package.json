@@ -1,6 +1,6 @@
 {
-  "name": "gherkin-lint",
-  "version": "4.2.4",
+  "name": "@ohlori/gherkin-lint",
+  "version": "4.3.0",
   "description": "A Gherkin linter/validator written in javascript",
   "author": "Vasiliki Siakka",
   "contributors": [
@@ -98,9 +98,20 @@
     }
   ],
   "main": "src/main.js",
+  "files": [
+    "src"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gherkin-lint/gherkin-lint.git"
+    "url": "git+https://github.com/ohlori/gherkin-lint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ohlori/gherkin-lint/issues"
+  },
+  "homepage": "https://github.com/ohlori/gherkin-lint#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "gherkin",
@@ -130,7 +141,7 @@
     "sinon": "9.0.1"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=18.0.0"
   },
   "bin": {
     "gherkin-lint": "src/main.js"
