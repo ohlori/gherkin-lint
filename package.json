@@ -97,7 +97,7 @@
       "url": "https://githubn.com/dsm2005"
     }
   ],
-  "main": "dist/main.js",
+  "main": "src/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gherkin-lint/gherkin-lint.git"
@@ -107,9 +107,10 @@
     "linter"
   ],
   "dependencies": {
+    "@cucumber/gherkin": "39.1.0",
+    "@cucumber/messages": "32.3.1",
     "commander": "11.0.0",
     "core-js": "3.33.1",
-    "gherkin": "9.0.0",
     "glob": "7.1.6",
     "lodash": "4.17.21",
     "strip-json-comments": "3.0.1",
@@ -132,14 +133,13 @@
     "node": ">=10.0.0"
   },
   "bin": {
-    "gherkin-lint": "dist/main.js"
+    "gherkin-lint": "src/main.js"
   },
   "scripts": {
     "build": "babel src -d dist",
     "demo": "node ./dist/main.js -c ./test-data-wip/.gherkin-lintrc test-data-wip/**",
     "lint": "eslint ./src ./test",
     "mocha": "mocha --recursive",
-    "prepare": "npm run build",
     "test": "npm run lint && npm run build && nyc --reporter=lcovonly --reporter=html --reporter=text -include=dist/** npm run mocha"
   },
   "license": "ISC"
