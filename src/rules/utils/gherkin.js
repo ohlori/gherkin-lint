@@ -60,6 +60,26 @@ function getScenarios(feature) {
     .map(child => child.scenario);
 }
 
+function getScenariosWithRule(feature) {
+  const result = [];
+
+  (feature.children || []).forEach(child => {
+    if (child.scenario) {
+      result.push({scenario: child.scenario, rule: null});
+    }
+
+    if (child.rule) {
+      (child.rule.children || []).forEach(ruleChild => {
+        if (ruleChild.scenario) {
+          result.push({scenario: ruleChild.scenario, rule: child.rule});
+        }
+      });
+    }
+  });
+
+  return result;
+}
+
 function getBackgrounds(feature) {
   return getAllChildren(feature)
     .filter(child => child.background)
@@ -85,6 +105,7 @@ module.exports = {
   getAllChildren: getAllChildren,
   getRules: getRules,
   getScenarios: getScenarios,
+  getScenariosWithRule: getScenariosWithRule,
   getBackgrounds: getBackgrounds,
   getStepContainers: getStepContainers,
   getTaggableNodes: getTaggableNodes,

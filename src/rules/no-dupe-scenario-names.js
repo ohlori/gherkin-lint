@@ -7,21 +7,28 @@ const availableConfigs = [
 
 let scenarios = [];
 
+function scenarioKey(scenario, ruleNode) {
+  const ruleName = ruleNode ? ruleNode.name : '';
+  return `${ruleName}\0${scenario.name}`;
+}
+
 function run(feature, file, configuration) {
   if (!feature) {
     return [];
   }
 
   let errors = [];
-  if(configuration === 'in-feature') {
+  if (configuration === 'in-feature') {
     scenarios = [];
   }
 
-  gherkinUtils.getScenarios(feature).forEach(scenario => {
-    if (scenario.name in scenarios) {
-      const dupes = getFileLinePairsAsStr(scenarios[scenario.name].locations);
-        
-      scenarios[scenario.name].locations.push({
+  gherkinUtils.getScenariosWithRule(feature).forEach(({scenario, rule: ruleNode}) => {
+    const key = scenarioKey(scenario, ruleNode);
+
+    if (key in scenarios) {
+      const dupes = getFileLinePairsAsStr(scenarios[key].locations);
+
+      scenarios[key].locations.push({
         file: file.relativePath,
         line: scenario.location.line
       });
@@ -31,7 +38,7 @@ function run(feature, file, configuration) {
         rule   : rule,
         line   : scenario.location.line});
     } else {
-      scenarios[scenario.name] = {
+      scenarios[key] = {
         locations: [
           {
             file: file.relativePath,
@@ -41,7 +48,7 @@ function run(feature, file, configuration) {
       };
     }
   });
-  
+
   return errors;
 }
 
