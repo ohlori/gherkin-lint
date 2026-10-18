@@ -1,5 +1,7 @@
 # Gherkin lint
 
+> Full rule documentation and CLI usage: see the [upstream README](https://github.com/gherkin-lint/gherkin-lint#readme).
+
 An unofficial [fork](https://github.com/ohlori/gherkin-lint) of [gherkin-lint](https://github.com/gherkin-lint/gherkin-lint), published as [`@ohlori/gherkin-lint`](https://www.npmjs.com/package/@ohlori/gherkin-lint). Based on upstream `4.2.4`. 
 
 Current fork version: **4.3.2**. It is not affiliated with or endorsed by the original authors.
