@@ -1,6 +1,6 @@
 # Gherkin lint
 
-An unofficial [fork](https://github.com/ohlori/gherkin-lint) of [gherkin-lint](https://github.com/gherkin-lint/gherkin-lint), published as [`@ohlori/gherkin-lint`](https://www.npmjs.com/package/@ohlori/gherkin-lint), based on upstream version `4.2.4`. Current fork version: **4.3.2**. It is not affiliated with or endorsed by the original authors.
+An unofficial [fork](https://github.com/ohlori/gherkin-lint) of [gherkin-lint](https://github.com/gherkin-lint/gherkin-lint), published as [`@ohlori/gherkin-lint`](https://www.npmjs.com/package/@ohlori/gherkin-lint), based on upstream version `4.2.4`. Current fork version: **4.3.3**. It is not affiliated with or endorsed by the original authors.
 
 ## Changes
 
@@ -40,4 +40,4 @@ npm install @ohlori/gherkin-lint
 
 See the [original README](https://github.com/gherkin-lint/gherkin-lint#readme) for CLI usage, the `.gherkin-lintrc` format, and the full set of 31 rules.
 
-License: [ISC](https://github.com/ohlori/gherkin-lint/blob/cucumber-rule-support/LICENSE)
+License: [ISC](https://github.com/ohlori/gherkin-lint/blob/master/LICENSE)
